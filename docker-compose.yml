@@ -25,26 +25,26 @@ services:
     environment:
       - GRADLE_USER_HOME=cache
       - SPRING_PROFILES_ACTIVE=dev
-  users-api:
+  dogs:
     image: anapsix/alpine-java:8_jdk_unlimited
     ports:
       - '8081:8081'
     working_dir: /app
     volumes:
-      - ./users-api:/app
+      - ./dogs:/app
     depends_on:
       - eureka 
     command: './gradlew bootRun'
     environment:
       - GRADLE_USER_HOME=cache
       - SPRING_PROFILES_ACTIVE=dev
-  songs-api:
+  cats:
     image: anapsix/alpine-java:8_jdk_unlimited
     ports:
-      - '8082:8082'
+      - '8090:8090'
     working_dir: /app
     volumes:
-      - ./songs-api:/app
+      - ./cats:/app
     depends_on:
       - eureka
     command: './gradlew bootRun'
@@ -59,4 +59,14 @@ services:
          - POSTGRES_PASSWORD=password
          - POSTGRES_USER=postgres
          - POSTGRES_DB=pgdev
+################################
+#   Setup frontend container
+################################
+###To use the link in CRA’s proxy it should look like this: "proxy": "http://server:5000" and that will just work.
+
+
+
+
+
+
 

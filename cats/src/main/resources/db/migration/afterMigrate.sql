@@ -1,0 +1,6 @@
+INSERT INTO CATS
+    (TITLE,IMAGE)
+VALUES
+    ('HAIRLESS','someURL');
+
+

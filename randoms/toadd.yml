@@ -1,0 +1,25 @@
+  dogs-ui:
+    build: ./dogs-ui
+    expose:
+      - 4000
+    ports:
+      - 4000:3000
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+      - ./frontend/public:/usr/src/app/public
+    links:
+      - server
+ cats-ui:
+    build: ./cats-ui
+    expose:
+      - 6000
+    ports:
+      - 6000:5000
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+      - ./frontend/public:/usr/src/app/public
+    links:
+      - server
+
+
+###To use the link in CRA’s proxy it should look like this: "proxy": "http://server:5000" and that will just work.

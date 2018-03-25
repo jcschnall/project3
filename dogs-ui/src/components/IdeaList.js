@@ -72,6 +72,7 @@ class IdeaList extends Component {
     render() {
         return (
             <div>
+                <center>
                 <h1>Dogs Submitted</h1>
                 <IdeaNewForm createIdea={this.createIdea}/>
 
@@ -88,6 +89,7 @@ class IdeaList extends Component {
                         )
                     })
                 }
+                </center>
             </div>
         )
     }

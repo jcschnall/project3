@@ -24,27 +24,29 @@ class IdeaNewForm extends Component {
     render() {
         return (
             <div>
-                <h2>Create New Idea</h2>
+                <h2>Add Dog Photo</h2>
 
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <label htmlFor="title">Title</label>
+                        <label htmlFor="title">Breed</label>
                         <input
                             name="title"
                             type="text"
                             onChange={this.handleChange} />
                     </div>
+                    <p><br></br></p>
 
                     <div>
-                        <label htmlFor="description">Description</label>
+                        <label htmlFor="description">URL</label>
                         <input
                             name="image"
                             type="text"
                             onChange={this.handleChange} />
                     </div>
+                    <p><br></br></p>
 
                     <div>
-                        <input type="submit" value="Create Idea"/>
+                        <input type="submit" value="Add"/>
                     </div>
                 </form>
 

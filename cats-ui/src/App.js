@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+import IdeaList from './components/IdeaList'
 
 class App extends Component {
 
 async componentWillMount() {
     try {
-        const response = await axios.get('/cats')
+        const response = await axios.get('/')      //cats
         this.setState({ ideas: response.data })
     } catch (error) {
         console.log('Error retrieving ideas!')
@@ -14,20 +16,14 @@ async componentWillMount() {
     }
 }
 
-
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <IdeaList />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
+

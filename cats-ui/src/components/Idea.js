@@ -27,7 +27,7 @@ class Idea extends Component {
                 <p><br></br></p>
                 <p><br></br></p>
                 <div>
-                    <img src={this.props.image} alt="cat" height="420" width="420"/>
+                    <a href={`cats/${this.props.id}`}><img src={this.props.image} alt="cat" height="420" width="420" /></a>
                 </div>
                  <p><br></br></p>
                  <p><br></br></p>

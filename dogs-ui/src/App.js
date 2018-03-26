@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 import IdeaList from './components/IdeaList'
+import DetailsList from './components/DetailList'
 
 class App extends Component {
 
@@ -17,11 +18,18 @@ async componentWillMount() {
 }
 
   render() {
+    if(window.location.pathname == '/Dogs' ){
     return (
       <div>
         <IdeaList />
       </div>
-    )
+    )}
+    else{
+    return(
+      <div>
+        <DetailsList />
+      </div>
+    )}
   }
 }
 

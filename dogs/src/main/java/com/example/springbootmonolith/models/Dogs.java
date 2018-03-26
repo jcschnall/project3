@@ -10,9 +10,10 @@ import javax.persistence.*;
 public class Dogs {
 
 
-    public Dogs(String title, String image) {
+    public Dogs(String title, String image, String description) {
         this.title = title;
         this.image = image;
+        this.description = description;
     }
 
     @Id
@@ -25,6 +26,16 @@ public class Dogs {
     @Column(name = "IMAGE")
     private String image;
 
+    @Column(name = "DESCRIPTION")
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Long getId() {
         return id;

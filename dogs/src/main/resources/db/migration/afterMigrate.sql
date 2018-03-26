@@ -1,6 +1,6 @@
 INSERT INTO DOGS
-    (TITLE,IMAGE)
+    (TITLE,IMAGE,DESCRIPTION)
 VALUES
-    ('GREATDANE','someURL');
+    ('GREATDANE','someURL','a_description');
 
 

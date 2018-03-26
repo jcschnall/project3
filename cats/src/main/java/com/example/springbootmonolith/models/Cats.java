@@ -10,9 +10,10 @@ import javax.persistence.*;
 public class Cats {
 
 
-    public Cats(String title, String image) {
+    public Cats(String title, String image, String description) {
         this.title = title;
         this.image = image;
+        this.description = description;
     }
 
     @Id
@@ -25,6 +26,16 @@ public class Cats {
     @Column(name = "IMAGE")
     private String image;
 
+    @Column(name = "DESCRIPTION")
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Long getId() {
         return id;

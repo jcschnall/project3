@@ -1,6 +1,6 @@
 INSERT INTO CATS
-    (TITLE,IMAGE)
+    (TITLE,IMAGE, DESCRIPTION)
 VALUES
-    ('HAIRLESS','someURL');
+    ('HAIRLESS','someURL', 'a_description');
 
 

@@ -10,7 +10,7 @@ class DetailsList extends Component {
 
     async componentWillMount() {
         try {
-            var CatId = window.location.pathname[(window.location.pathname).length-1]
+            var DogId = window.location.pathname[(window.location.pathname).length-1]
             const response = await axios.get(`/Dogs/${DogId}`)
             this.setState( {ideas: response.data} )
         } catch (error) {
@@ -18,6 +18,22 @@ class DetailsList extends Component {
             console.log(error)
         }
     }
+
+    handleChange = (event) => {
+        const attributeToChange = event.target.name
+        const newValue = event.target.value
+
+        const updatedNewIdea = { ...this.state.newIdea }
+        updatedNewIdea[attributeToChange] = newValue
+        this.setState({ newIdea: updatedNewIdea })
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+
+        this.props.createIdea(this.state.newIdea)
+    }
+
 
 
     render() {
@@ -33,8 +49,22 @@ class DetailsList extends Component {
                           </div>
                               <img src={this.state.ideas.image} alt="dog" height="420" width="420"/>
                           <div>
+                          </div>
+                              <h3> {this.state.ideas.description} </h3>
+                          <div>
                            <p><br></br></p>
                           </div>
+
+                          <form onSubmit={this.handleSubmit}>
+                              <div>
+                                  <label htmlFor="description">description</label>
+                                  <input
+                                      name="description"
+                                      type="text"
+                                      onChange={this.handleChange} />
+                              </div>
+                          </form>
+
 
 
                 </center>

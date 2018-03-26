@@ -35,6 +35,20 @@ class DetailsList extends Component {
     }
 
 
+    createIdea = async (idea, index) => {
+        try {
+            const newIdeaResponse = await axios.post(`/Dogs`, idea)
+
+            const updatedIdeasList = [...this.state.ideas]
+            updatedIdeasList.push(newIdeaResponse.data)
+            this.setState({ideas: updatedIdeasList})
+
+        } catch(error) {
+            console.log('Error creating new User!')
+            console.log(error)
+        }
+    }
+
 
     render() {
         return (
@@ -63,6 +77,9 @@ class DetailsList extends Component {
                                       type="text"
                                       onChange={this.handleChange} />
                               </div>
+                                <div>
+                                    <input type="submit" value="Add"/>
+                                </div>
                           </form>
 
 

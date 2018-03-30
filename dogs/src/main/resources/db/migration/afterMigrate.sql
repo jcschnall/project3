@@ -1,6 +1,0 @@
-INSERT INTO DOGS
-    (TITLE,IMAGE,DESCRIPTION)
-VALUES
-    ('GREATDANE','someURL','a_description');
-
-
